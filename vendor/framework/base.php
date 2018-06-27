@@ -61,30 +61,30 @@ class base
      */
     private function getRequestParams()
     {
-        //当前平台
+        //当前模块
         $defPlate = $GLOBALS['config']['app']['default_platform'];
-        $p = isset($_GET['p'])?$_GET['p']:$defPlate;
+        $p = isset($_GET['p']) ? $_GET['p'] : $defPlate;
         define('PLATFORM', $p);
 
         //当前控制器
         $defController = $GLOBALS['config'][PLATFORM]['default_controller'];
-        $c = isset($_GET['c'])?$_GET['c']:$defController;
+        $c = isset($_GET['c']) ? $_GET['c'] : $defController;
         define('CONTROLLER', $c);
 
         //当前方法
         $defAction = $GLOBALS['config'][PLATFORM]['default_action'];
-        $a = isset($_GET['a'])?$_GET['a']:$defAction;
+        $a = isset($_GET['a']) ? $_GET['a'] : $defAction;
         define('ACTION', $a);
     }
 
     private function dispatch()
     {
         //实例化控制器
-        $controllerName = CONTROLLER.'Controller';
+        $controllerName = CONTROLLER . 'Controller';
         $controller = new $controllerName();
 
         //调用当前方法
-        $actionName = ACTION.'Action';
+        $actionName = ACTION . 'Action';
         $controller -> $actionName();
     }
 }

@@ -3,6 +3,7 @@
  * 基础公共配置参数
  */
 return [
+	//数据库参数
 	'db' => [
 		'db' => 'mysql',
 		'host' => '127.0.0.1',
@@ -13,12 +14,12 @@ return [
 		'charset' => 'utf8'
 	],
 
-	//整体配置
+	//默认模块配置
     'app' => [
         'default_platform'=> 'home', //默认平台
     ],
 
-    //前台配置
+    //前台默认访问配置
     'home' => [
         'default_controller' => 'Index', //默认控制器
         'default_action' => 'index', //默认操作方法
